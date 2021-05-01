@@ -3,8 +3,6 @@
 ##
 ## Server
 server:
-  service:
-    type: NodePort
   ## ArgoCD config
   ## reference https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml
   configEnabled: true
