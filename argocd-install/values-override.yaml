@@ -24,14 +24,15 @@ server:
         helm:
           version: v3
           valueFiles:
-          - values.yaml
-          - ../values-override.yaml.yaml
+          - ../values-override.yaml
         path: argocd-install/argo-cd
         repoURL: https://github.com/kurtburak/argocd.git
-        targetRevision: master
+        targetRevision: HEAD
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
+        automated:
+          selfHeal: true
     - name: argocd-apps
       namespace: argocd
       destination:
@@ -41,7 +42,7 @@ server:
       source:
         path: argocd-apps
         repoURL: https://github.com/kurtburak/argocd.git
-        targetRevision: master
+        targetRevision: HEAD
         directory:
           recurse: true
           jsonnet: {}
@@ -57,7 +58,7 @@ server:
       source:
         path: argocd-appprojects
         repoURL: https://github.com/kurtburak/argocd.git
-        targetRevision: master
+        targetRevision: HEAD
         directory:
           recurse: true
           jsonnet: {}
