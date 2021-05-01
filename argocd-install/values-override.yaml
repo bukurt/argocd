@@ -24,6 +24,7 @@ server:
         helm:
           version: v3
           valueFiles:
+          - values.yaml
           - ../values-override.yaml
         path: argocd-install/argo-cd
         repoURL: https://github.com/kurtburak/argocd.git
@@ -31,8 +32,6 @@ server:
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
-        automated:
-          selfHeal: true
     - name: argocd-apps
       namespace: argocd
       destination:
