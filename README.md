@@ -1,6 +1,7 @@
 # Self Managed Argo CD - App of Everything
 
-Intallaiton
+Installation:
+
 helm install argocd ./argo-cd \
   --namespace=argocd \
   --create-namespace \
