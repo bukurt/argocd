@@ -1,0 +1,2 @@
+# argocd
+ArgoCD examples
