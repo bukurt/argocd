@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   destinations:
-  - namespace: sample-project
+  - namespace: sample-app
     server: https://kubernetes.default.svc
   orphanedResources:
     warn: false
