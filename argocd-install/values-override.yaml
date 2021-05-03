@@ -65,6 +65,7 @@ server:
       syncPolicy:
         automated:
           selfHeal: true
+          prune: true
   additionalProjects: 
   - name: argocd
     namespace: argocd
