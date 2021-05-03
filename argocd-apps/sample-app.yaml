@@ -10,7 +10,7 @@ spec:
   project: sample-project
   source:
     path: kubernetes-manifests/
-    repoURL: https://github.com/GoogleCloudPlatform/microservices-demo.gitgit
+    repoURL: https://github.com/GoogleCloudPlatform/microservices-demo.git
     targetRevision: master
   syncPolicy:
     syncOptions:
