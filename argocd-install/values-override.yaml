@@ -48,6 +48,7 @@ server:
       syncPolicy:
         automated:
           selfHeal: true
+          prune: true
     - name: argocd-appprojects
       namespace: argocd
       destination:
