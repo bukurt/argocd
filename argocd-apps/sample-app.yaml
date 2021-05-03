@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
   project: sample-project
   source:
-    path: kubernetes-manifests/
-    repoURL: https://github.com/GoogleCloudPlatform/microservices-demo.git
-    targetRevision: master
+    path: sample-app/
+    repoURL: https://github.com/kurtburak/argocd.git
+    targetRevision: HEAD
   syncPolicy:
     syncOptions:
     - CreateNamespace=true

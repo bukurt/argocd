@@ -4,6 +4,9 @@ metadata:
   name: sample-project
   namespace: argocd
 spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
   destinations:
   - namespace: sample-app
     server: https://kubernetes.default.svc
