@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: sample-app
+    server: https://kubernetes.default.svc
+  project: sample-project
+  source:
+    path: kubernetes-manifests/
+    repoURL: https://github.com/GoogleCloudPlatform/microservices-demo.gitgit
+    targetRevision: master
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated: {}
