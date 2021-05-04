@@ -2,7 +2,8 @@
 
 Installation:
 
-helm install argocd ./argo-cd \
-  --namespace=argocd \
-  --create-namespace \
-  -f values-override.yaml
+$ cd argocd-install
+$ helm install argocd ./argo-cd \\
+    --namespace=argocd \\
+    --create-namespace \\
+    -f values-override.yaml
