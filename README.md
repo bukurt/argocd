@@ -3,6 +3,7 @@
 Installation:
 
 $ cd argocd-install
+
 $ helm install argocd ./argo-cd \\
     --namespace=argocd \\
     --create-namespace \\
