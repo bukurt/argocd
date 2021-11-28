@@ -3,11 +3,11 @@
 **Table of Contents**
 
 - [Introduction](#introduction)
-- [Create Local Kubernetes Cluster](create-local-kubernetes-cluster)
-- [Git Repository Hierarchy](git-repository-hierarchy)
-- [Create App Of Everything Pattern](create-app-of-everything-pattern)
-- [Intall Argo CD Using Helm](intall-argo-cd-using-helm)
-- [Demo With Sample Application](demo-withsample-application)
+- [Create Local Kubernetes Cluster](#create-local-kubernetes-cluster)
+- [Git Repository Hierarchy](#git-repository-hierarchy)
+- [Create App Of Everything Pattern](#create-app-of-everything-pattern)
+- [Intall Argo CD Using Helm](#intall-argo-cd-using-helm)
+- [Demo With Sample Application](#demo-withsample-application)
 - [Cleanup](cleanup)
 
 # Introduction
