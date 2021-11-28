@@ -7,8 +7,8 @@
 - [Git Repository Hierarchy](#git-repository-hierarchy)
 - [Create App Of Everything Pattern](#create-app-of-everything-pattern)
 - [Intall Argo CD Using Helm](#intall-argo-cd-using-helm)
-- [Demo With Sample Application](#demo-withsample-application)
-- [Cleanup](cleanup)
+- [Demo With Sample Application](#demo-with-sample-application)
+- [Cleanup](#cleanup)
 
 # Introduction
 This project aims to install a self-managed Argo CD using the App of App pattern. Full instructions and explanation can be found in the article [Self Managed Argo CD — App Of Everything](https://medium.com/devopsturkiye/self-managed-argo-cd-app-of-everything-a226eb100cf0).
