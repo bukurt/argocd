@@ -244,7 +244,7 @@ git push
 
 # Cleanup
 Remove application and applicaiton project.
-````
+```
 rm -f argocd-apps/sample-app.yaml
 rm -f argocd-appprojects/sample-project.yaml
 git rm argocd-apps/sample-app.yaml
