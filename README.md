@@ -27,6 +27,7 @@ kind create cluster — name my-cluster
 Check cluster is running and healthy
 ```
 kubectl cluster-info — context kind-my-cluster
+
 Kubernetes control plane is running at https://127.0.0.1:50589
 KubeDNS is running at https://127.0.0.1:50589/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 To further debug and diagnose cluster problems, use ‘kubectl cluster-info dump’.
@@ -135,9 +136,13 @@ EOF
 
 # Intall Argo CD Using Helm
 ```
-$ git clone https://github.com/kurtburak/argocd.git
-$ cd argocd/argocd-install/
-$ helm install argocd ./argo-cd \
+git clone https://github.com/kurtburak/argocd.git
+```
+```
+cd argocd/argocd-install/
+```
+```
+helm install argocd ./argo-cd \
     --namespace=argocd \
     --create-namespace \
     -f values-override.yaml
