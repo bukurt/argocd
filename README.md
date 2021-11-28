@@ -11,14 +11,29 @@
 - [Cleanup](#cleanup)
 
 # Introduction
-This project aims to install a self-managed Argo CD using the App of App pattern. Full instructions and explanation can be found in the article [Self Managed Argo CD — App Of Everything](https://medium.com/devopsturkiye/self-managed-argo-cd-app-of-everything-a226eb100cf0).
+This project aims to install a self-managed Argo CD using the App of App pattern. Full instructions and explanation can be found in the Medium article [Self Managed Argo CD — App Of Everything](https://medium.com/devopsturkiye/self-managed-argo-cd-app-of-everything-a226eb100cf0).
 
 # Create Local Kubernetes Cluster
+Intall kind.
 ```
-$ kind create cluster — name my-cluster
+brew install kind
+```
+
+Create local Kubernetes Cluster using kind
+```
+kind create cluster — name my-cluster
+```
+
+Check cluster is running and healthy
+```
+kubectl cluster-info — context kind-my-cluster
+Kubernetes control plane is running at https://127.0.0.1:50589
+KubeDNS is running at https://127.0.0.1:50589/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+To further debug and diagnose cluster problems, use ‘kubectl cluster-info dump’.
 ```
 
 # Git Repository Hierarchy
+Folder structure below is used in this project. You are free to change it.
 ```
 argocd/
 ├── argocd-appprojects      # stores ArgoCD App Project's yaml files
@@ -29,14 +44,23 @@ argocd/
 ```
 
 # Create App Of Everything Pattern
-Edit *values-override.yaml* regardig configuration below.
+
+Open *argocd-install/values-override.yaml* with your favorite editor and modify related values.
 ```
+vi argocd-install/values-override.yaml
+```
+Or update it with your values.
+```
+cat << EOF > argocd-install/values-override.yaml
 server:
   configEnabled: true
   config:
     repositories: |
-    - type: git
-      url: https://github.com/kurtburak/argocd.git
+      - type: git
+        url: https://github.com/kurtburak/argocd.git
+      - name: argo-helm
+        type: helm
+        url: https://argoproj.github.io/argo-helm
   additionalApplications: 
     - name: argocd
       namespace: argocd
@@ -106,6 +130,7 @@ server:
       kind: '*'
     orphanedResources:
       warn: false
+EOF
 ```
 
 # Intall Argo CD Using Helm
