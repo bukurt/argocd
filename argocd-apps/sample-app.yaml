@@ -10,7 +10,7 @@ spec:
   project: sample-project
   source:
     path: sample-app/
-    repoURL: https://github.com/kurtburak/argocd.git
+    repoURL: https://github.com/cesasturion/argocd.git
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
