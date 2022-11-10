@@ -1,0 +1,30 @@
+namespace: prod
+
+bases:
+- ../../base
+
+patches:
+- target:
+    kind: Namespace
+    name: default-dev
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: prod
+- target:
+    kind: ResourceQuota
+    name: resource-quota
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: quota-prod
+- target:
+    kind: LimitRange
+    name: limit-range
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: limit-prod
+    - op: replace
+      path: /spec/limits/0/defaultRequest/cpu
+      value: 150m

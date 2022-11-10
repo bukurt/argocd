@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: web-ingress
+  annotations:
+    # kubernetes.io/ingress.global-static-ip-name: "static-ip"
+spec:
+  rules:
+    - host: thisthing.works
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: web
+              servicePort: 80
+
+    - host: assets.thisthing.works
+      http:
+        paths:
+          - path: /assets/*
+            backend:
+              serviceName: web
+              servicePort: 81
