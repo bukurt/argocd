@@ -54,6 +54,9 @@ spec:
         - {{ .Values.server.logFormat }}
         - --loglevel
         - {{ .Values.server.logLevel }}
+        {{- if .Values.server.insecure }}
+        - --insecure
+        {{- end }}
         {{- if or (and .Values.redis.enabled (not $redisHa.enabled)) (and $redisHa.enabled $redisHa.haproxy.enabled) }}
         - --redis
         - {{ template "argo-cd.redis.fullname" . }}:{{ .Values.redis.servicePort }}
