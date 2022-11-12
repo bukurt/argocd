@@ -13,7 +13,7 @@ This project aims to install a self-managed Argo CD using the App of App pattern
 cd argocd-install
 
 # If you are running locally, create a cluster before with minikube.
-# minikube start
+# minikube start --memory 8192 --cpus 2
 
 ./install.sh values.(cloud/local).yaml
 

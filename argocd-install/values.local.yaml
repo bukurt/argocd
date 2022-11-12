@@ -41,7 +41,7 @@ server:
       project: argocd
       source:
         path: argocd-apps
-        repoURL: https://github.com/kurtburak/argocd.git
+        repoURL: https://github.com/andersondario/kubernetes-gitops.git
         targetRevision: HEAD
         directory:
           recurse: true
