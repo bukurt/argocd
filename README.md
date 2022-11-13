@@ -19,7 +19,7 @@ cd argocd-install
 # If you are running locally, create a cluster before with minikube.
 # minikube start --memory 8192 --cpus 2
 
-./install.sh values.(cloud/local).yaml
+./install.sh
 
 # If you are running locally, enable the tunnel.
 # minikube tunnel
