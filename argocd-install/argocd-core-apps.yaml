@@ -17,6 +17,7 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   syncPolicy:
+    automated: {}
     syncOptions:
     - CreateNamespace=true
     - ApplyOutOfSyncOnly=true
@@ -39,6 +40,7 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   syncPolicy:
+    automated: {}
     syncOptions:
       - ApplyOutOfSyncOnly=true
 ---
@@ -60,5 +62,6 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   syncPolicy:
+    automated: {}
     syncOptions:
       - ApplyOutOfSyncOnly=true

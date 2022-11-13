@@ -13,6 +13,7 @@ spec:
     targetRevision: HEAD
   project: default
   syncPolicy:
+    automated: {}
     syncOptions:
     - CreateNamespace=true
     - ApplyOutOfSyncOnly=true
