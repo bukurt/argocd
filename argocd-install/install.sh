@@ -11,10 +11,10 @@ kubectl label namespace kong-istio istio-injection=enabled
 kubectl label namespace argocd istio-injection=enabled
 
 helm install -n kong-istio kong-istio kong/kong
-helm upgrade --install argocd ./argo-cd --namespace=argocd
+helm install argocd ./argo-cd --namespace=argocd
 
 kubectl apply -f argocd-core-projects.yaml
-kubectl apply -f argocd-core-app.yaml
+kubectl apply -f argocd-core-apps.yaml
 kubectl apply -f argocd-ingress.yaml
 
 sleep 30
