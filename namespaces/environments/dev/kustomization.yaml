@@ -30,4 +30,4 @@ patches:
   patch: |-
     - op: replace
       path: /metadata/name
-      value: dev
+      value: limit-dev

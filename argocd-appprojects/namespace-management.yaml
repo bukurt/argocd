@@ -12,3 +12,7 @@ spec:
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: HEAD
   project: default
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    - ApplyOutOfSyncOnly=true
