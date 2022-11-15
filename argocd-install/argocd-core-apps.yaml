@@ -17,7 +17,9 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   syncPolicy:
-    automated: {}
+    automated: 
+      prune: true
+      selfHeal: true
     syncOptions:
     - CreateNamespace=true
     - ApplyOutOfSyncOnly=true
@@ -41,9 +43,8 @@ spec:
     server: https://kubernetes.default.svc
   syncPolicy:
     automated: 
+      prune: true
       selfHeal: true
-    syncOptions:
-      - ApplyOutOfSyncOnly=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -64,6 +65,5 @@ spec:
     server: https://kubernetes.default.svc
   syncPolicy:
     automated: 
+      prune: true
       selfHeal: true
-    syncOptions:
-      - ApplyOutOfSyncOnly=true
