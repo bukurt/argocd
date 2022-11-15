@@ -7,7 +7,7 @@ spec:
     namespace: dev
     server: 'https://kubernetes.default.svc'
   source:
-    path: argocd-apps/microservices-sample
+    path: argocd-apps/microservices-sample/overlays/dev
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
   project: microservices-sample
@@ -27,7 +27,7 @@ spec:
     namespace: prod
     server: 'https://kubernetes.default.svc'
   source:
-    path: argocd-apps/microservices-sample
+    path: argocd-apps/microservices-sample/overlays/dev
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
   project: microservices-sample
