@@ -23,7 +23,7 @@ patches:
       value: 3
     - op: replace
       path: /spec/hard/limits.memory
-      value: 3
+      value: 3Gi
     - op: replace
       path: /spec/hard/pods
       value: 50

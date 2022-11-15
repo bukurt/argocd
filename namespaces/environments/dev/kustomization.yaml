@@ -23,7 +23,7 @@ patches:
       value: 1
     - op: replace
       path: /spec/hard/limits.memory
-      value: 1
+      value: 1Gi
 - target:
     kind: LimitRange
     name: limit-range
