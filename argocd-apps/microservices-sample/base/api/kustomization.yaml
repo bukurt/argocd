@@ -1,0 +1,4 @@
+resources:
+  - api-deployment.yaml
+  - api-service.yaml
+  - api-configmap.yaml
