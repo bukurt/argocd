@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: microservices-sample-dev
+spec:
+  destination:
+    namespace: dev
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: apps/microservices-sample/overlays/dev
+    repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
+    targetRevision: main
+  project: microservices-sample
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/  v1alpha1
+kind: Application
+metadata:
+  name: microservices-sample-prod
+spec:
+  destination:
+    namespace: prod
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: apps/microservices-sample/overlays/prod
+    repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
+    targetRevision: main
+  project: microservices-sample
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true

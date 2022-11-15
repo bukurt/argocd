@@ -1,8 +1,0 @@
-bases:
-  - ../../base
-namespace: prod
-
-images:
-- name: 
-  newName: my.docker.registry.com/my-project/my-app
-  newTag: test

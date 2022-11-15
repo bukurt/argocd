@@ -1,8 +1,0 @@
-bases:
-  - ../../base
-namespace: prod
-
-images:
-- name: api
-  newName: local/api
-  newTag: latest

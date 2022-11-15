@@ -1,7 +1,0 @@
-bases:
-  - ../../base
-images:
-- name: api
-  newName: local/api
-  newTag: dev
-namespace: dev

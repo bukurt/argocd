@@ -1,5 +1,0 @@
-bases:
-  - ../../base
-namespace: dev
-resources:
-  - ../../../../general/dev-namespace.yaml
