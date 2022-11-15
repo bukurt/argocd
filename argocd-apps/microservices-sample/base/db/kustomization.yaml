@@ -1,0 +1,4 @@
+resources:
+  - db-deployment.yaml
+  - db-service.yaml
+  - db-configmap.yaml

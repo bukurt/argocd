@@ -17,7 +17,13 @@ patches:
   patch: |-
     - op: replace
       path: /metadata/name
-      value: quota-prod
+      value: quota-dev
+    - op: replace
+      path: /spec/hard/limits.cpu
+      value: 2
+    - op: replace
+      path: /spec/hard/services
+      value: 10 
 - target:
     kind: LimitRange
     name: limit-range

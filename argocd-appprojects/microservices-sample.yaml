@@ -12,9 +12,9 @@ spec:
     targetRevision: dev
   project: microservices-sample
   syncPolicy:
-    automated: {}
-    syncOptions:
-    - ApplyOutOfSyncOnly=true
+    automated: 
+      prune: true
+      selfHeal: true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -31,6 +31,5 @@ spec:
   project: microservices-sample
   syncPolicy:
     automated: 
+      prune: true
       selfHeal: true
-    syncOptions:
-    - ApplyOutOfSyncOnly=true

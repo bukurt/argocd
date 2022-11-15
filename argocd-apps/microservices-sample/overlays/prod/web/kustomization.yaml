@@ -1,0 +1,20 @@
+resources:
+  - ../../../base/web
+  - hpa.yaml
+images:
+- name: API_IMAGE
+  newName: andersondarioo/web
+  newTag: e63e5577daff77a47b34a51cf73ba14532357a22
+
+patches:
+- target:
+    kind: Ingress
+    name: web-ingress
+  patch: |-
+    - op: replace
+      path: /spec/rules/0/host
+      value: webapp.prod
+    - op: replace
+      path: /spec/rules/1/host
+      value: webapp.prod
+    

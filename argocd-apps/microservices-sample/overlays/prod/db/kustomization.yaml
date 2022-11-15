@@ -1,0 +1,5 @@
+resources:
+  - ../../../base/db
+replicas:
+- name: postgres
+  count: 3
