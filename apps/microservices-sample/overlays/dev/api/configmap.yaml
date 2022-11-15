@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+data:
+  DB: postgresql://appuser:dummy-pass@postgres-service-dev:5432/appdb
