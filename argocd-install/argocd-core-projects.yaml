@@ -24,7 +24,7 @@ metadata:
   annotations:
   labels:
   name: microservices-sample
-  namespace: microservices-sample
+  namespace: argocd
 spec:
   description: Microservices-sample Project
   sourceRepos:
