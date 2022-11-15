@@ -17,6 +17,6 @@ kubectl apply -f argocd-core-projects.yaml
 kubectl apply -f argocd-core-apps.yaml
 kubectl apply -f argocd-ingress.yaml
 
-sleep 30
+sleep 60
 
 kubectl -n argocd get secrets argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d

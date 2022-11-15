@@ -4,14 +4,16 @@ metadata:
   name: namespace-management
 spec:
   destination:
-    name: ''
-    namespace: default
+    namespace: infra
     server: 'https://kubernetes.default.svc'
   source:
-    path: namespaces
+    path: infra/namespaces
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: HEAD
-  project: default
+    directory:
+      recurse: true
+      jsonnet: {}
+  project: infra-management
   syncPolicy:
     automated: 
       prune: true
