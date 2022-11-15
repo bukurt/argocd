@@ -6,7 +6,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: api-prod
+    name: api
   minReplicas: 3
   maxReplicas: 10
   metrics:

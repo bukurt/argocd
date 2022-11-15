@@ -6,14 +6,14 @@ images:
   newTag: e63e5577daff77a47b34a51cf73ba14532357a22
 
 patches:
-  - target:
-      kind: Ingress
-      name: web-ingress-dev
-    patch: |-
-      - op: replace
-        path: /spec/rules/0/host
-        value: webapp.dev
-      - op: replace
-        path: /spec/rules/1/host
-        value: webapp.dev
-      
+- target:
+    kind: Ingress
+    name: web-ingress
+  patch: |-
+    - op: replace
+      path: /spec/rules/0/host
+      value: webapp.dev
+    - op: replace
+      path: /spec/rules/1/host
+      value: webapp.dev
+    
