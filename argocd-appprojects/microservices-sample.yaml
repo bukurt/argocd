@@ -12,7 +12,8 @@ spec:
     targetRevision: dev
   project: microservices-sample
   syncPolicy:
-    automated: {}
+    automated: 
+      selfHeal: true
     syncOptions:
     - ApplyOutOfSyncOnly=true
 ---
@@ -30,6 +31,7 @@ spec:
     targetRevision: dev
   project: microservices-sample
   syncPolicy:
-    automated: {}
+    automated: 
+      selfHeal: true
     syncOptions:
     - ApplyOutOfSyncOnly=true

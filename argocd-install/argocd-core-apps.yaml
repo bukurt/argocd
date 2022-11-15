@@ -40,7 +40,8 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   syncPolicy:
-    automated: {}
+    automated: 
+      selfHeal: true
     syncOptions:
       - ApplyOutOfSyncOnly=true
 ---
@@ -62,6 +63,7 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   syncPolicy:
-    automated: {}
+    automated: 
+      selfHeal: true
     syncOptions:
       - ApplyOutOfSyncOnly=true
