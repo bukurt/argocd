@@ -9,7 +9,7 @@ spec:
   source:
     path: argocd-apps/microservices-sample/overlays/dev
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
-    targetRevision: dev
+    targetRevision: main
   project: microservices-sample
   syncPolicy:
     automated: 
@@ -27,7 +27,7 @@ spec:
   source:
     path: argocd-apps/microservices-sample/overlays/dev
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
-    targetRevision: dev
+    targetRevision: main
   project: microservices-sample
   syncPolicy:
     automated: 
