@@ -17,7 +17,7 @@ patches:
   patch: |-
     - op: replace
       path: /metadata/name
-      value: quota-dev
+      value: quota-prod
     - op: replace
       path: /spec/hard/limits.cpu
       value: 3
