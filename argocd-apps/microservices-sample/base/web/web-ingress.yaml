@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: kong
   rules:
-    - host: sample-app.local
+    - host: webapp.local
       http:
         paths:
           - path: /
@@ -16,7 +16,7 @@ spec:
                 port: 
                   number: 80
 
-    - host: sample-app.local
+    - host: webapp.local
       http:
         paths:
           - path: /assets/*

@@ -1,0 +1,8 @@
+resources:
+  - ../../../base/api
+  - hpa.yaml
+
+images:
+- name: API_IMAGE
+  newName: andersondarioo/api
+  newTag: e63e5577daff77a47b34a51cf73ba14532357a22
