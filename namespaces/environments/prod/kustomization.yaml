@@ -20,10 +20,13 @@ patches:
       value: quota-dev
     - op: replace
       path: /spec/hard/limits.cpu
-      value: 2
+      value: 3
     - op: replace
-      path: /spec/hard/services
-      value: 10 
+      path: /spec/hard/limits.memory
+      value: 3
+    - op: replace
+      path: /spec/hard/pods
+      value: 50
 - target:
     kind: LimitRange
     name: limit-range
