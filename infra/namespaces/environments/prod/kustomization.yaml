@@ -19,11 +19,17 @@ patches:
       path: /metadata/name
       value: quota-prod
     - op: replace
-      path: /spec/hard/limits.cpu
+      path: /spec/hard/requests.cpu
       value: 3
     - op: replace
-      path: /spec/hard/limits.memory
+      path: /spec/hard/requests.memory
       value: 3Gi
+    - op: replace
+      path: /spec/hard/limits.cpu
+      value: 6
+    - op: replace
+      path: /spec/hard/limits.memory
+      value: 6Gi
     - op: replace
       path: /spec/hard/pods
       value: 50
@@ -34,6 +40,3 @@ patches:
     - op: replace
       path: /metadata/name
       value: limit-prod
-    - op: replace
-      path: /spec/limits/0/defaultRequest/cpu
-      value: 150m

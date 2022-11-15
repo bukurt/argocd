@@ -18,10 +18,10 @@ cd argocd-install
 
 # If you are running locally, create a cluster before with minikube.
 # minikube start --memory 8192 --cpus 2
+# minikube addons enable metrics-server
 
 ./install.sh
 
-# If you are running locally, enable the metric server for the HPAs be able to run and create the tunnel.
-# minikube addons enable metrics-server
+# If you are running locally, enable the tunnel.
 # minikube tunnel
 ```
