@@ -21,6 +21,7 @@ cd argocd-install
 
 ./install.sh
 
-# If you are running locally, enable the tunnel.
+# If you are running locally, enable the metric server for the HPAs be able to run and create the tunnel.
+# minikube addons enable metrics-server
 # minikube tunnel
 ```
