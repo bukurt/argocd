@@ -4,7 +4,7 @@ metadata:
   name: argocd
   namespace: argocd
 spec:
-  project: argocd
+  project: infra
   source:
     helm:
       version: v3
@@ -33,7 +33,7 @@ spec:
   source:
     path: argocd-appprojects
     repoURL: https://github.com/andersondario/kubernetes-gitops.git
-    targetRevision: HEAD
+    targetRevision: dev
     directory:
       recurse: true
       jsonnet: {}
@@ -45,24 +45,24 @@ spec:
       prune: true
       selfHeal: true
 ---
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: argocd-apps
-  namespace: argocd
-spec:
-  project: argocd
-  source:
-    path: argocd-apps
-    repoURL: https://github.com/andersondario/kubernetes-gitops.git
-    targetRevision: HEAD
-    directory:
-      recurse: true
-      jsonnet: {}
-  destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
-  syncPolicy:
-    automated: 
-      prune: true
-      selfHeal: true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: argocd-apps
+#   namespace: argocd
+# spec:
+#   project: argocd
+#   source:
+#     path: argocd-apps
+#     repoURL: https://github.com/andersondario/kubernetes-gitops.git
+#     targetRevision: dev
+#     directory:
+#       recurse: true
+#       jsonnet: {}
+#   destination:
+#     namespace: argocd
+#     server: https://kubernetes.default.svc
+#   syncPolicy:
+#     automated: 
+#       prune: true
+#       selfHeal: true

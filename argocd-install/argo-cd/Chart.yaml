@@ -1,13 +1,13 @@
 annotations:
   artifacthub.io/changes: |
-    - "[Fixed]: Cluster credentials JSON config must be always converted to the string"
+    - "[Security]: Upgrade redis to 7.0.7 to avoid CVE-2022-3996"
 apiVersion: v2
-appVersion: v2.5.2
+appVersion: v2.5.8
 dependencies:
 - condition: redis-ha.enabled
   name: redis-ha
   repository: https://dandydeveloper.github.io/charts/
-  version: 4.22.3
+  version: 4.22.4
 description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery tool
   for Kubernetes.
 home: https://github.com/argoproj/argo-helm
@@ -24,4 +24,4 @@ name: argo-cd
 sources:
 - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
 - https://github.com/argoproj/argo-cd
-version: 5.13.8
+version: 5.19.10
