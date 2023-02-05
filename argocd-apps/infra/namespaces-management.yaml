@@ -10,7 +10,7 @@ spec:
     path: infra/namespaces
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
-  project: infra-management
+  project: infra
   syncPolicy:
     automated: 
       prune: true

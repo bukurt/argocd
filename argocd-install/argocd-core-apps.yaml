@@ -44,40 +44,21 @@ spec:
     automated: 
       prune: true
       selfHeal: true
-# ---
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: argocd-apps
-#   namespace: argocd
-# spec:
-#   project: infra
-#   source:
-#     path: argocd-apps
-#     repoURL: https://github.com/andersondario/kubernetes-gitops.git
-#     targetRevision: dev
-#     directory:
-#       recurse: true
-#       jsonnet: {}
-#   destination:
-#     namespace: argocd
-#     server: https://kubernetes.default.svc
-#   syncPolicy:
-#     automated: 
-#       prune: true
-#       selfHeal: true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: infra-management
+  name: argocd-apps
   namespace: argocd
 spec:
   project: infra
   source:
-    path: infra
+    path: argocd-apps
     repoURL: https://github.com/andersondario/kubernetes-gitops.git
     targetRevision: dev
+    directory:
+      recurse: true
+      jsonnet: {}
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc

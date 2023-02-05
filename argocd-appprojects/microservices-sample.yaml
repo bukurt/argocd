@@ -1,21 +1,21 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: AppProject
-# metadata:
-#   annotations:
-#   labels:
-#   name: microservices-sample
-#   namespace: argocd
-# spec:
-#   description: Microservices-sample Project
-#   sourceRepos:
-#   - 'https://github.com/andersondario/kubernetes-gitops.git'
-#   destinations:
-#   - namespace: dev
-#     server: https://kubernetes.default.svc
-#   - namespace: prod
-#     server: https://kubernetes.default.svc  
-#   clusterResourceWhitelist:
-#   - group: '*'
-#     kind: '*'
-#   orphanedResources:
-#     warn: true
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  annotations:
+  labels:
+  name: microservices-sample
+  namespace: argocd
+spec:
+  description: Microservices-sample Project
+  sourceRepos:
+  - 'https://github.com/andersondario/kubernetes-gitops.git'
+  destinations:
+  - namespace: dev
+    server: https://kubernetes.default.svc
+  - namespace: prod
+    server: https://kubernetes.default.svc  
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  orphanedResources:
+    warn: true
