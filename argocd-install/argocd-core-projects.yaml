@@ -12,6 +12,10 @@ spec:
     server: https://kubernetes.default.svc
   - namespace: kong-istio
     server: https://kubernetes.default.svc
+  - namespace: dev
+    server: https://kubernetes.default.svc
+  - namespace: prod
+    server: https://kubernetes.default.svc
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
