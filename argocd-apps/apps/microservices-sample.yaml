@@ -7,7 +7,7 @@ spec:
     namespace: dev
     server: 'https://kubernetes.default.svc'
   source:
-    path: manifests/microservices-sample/environment/dev
+    path: manifests/microservices-sample/environments/dev
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: main
   project: microservices-sample
@@ -25,7 +25,7 @@ spec:
     namespace: prod
     server: 'https://kubernetes.default.svc'
   source:
-    path: manifests/microservices-sample/environment/prod
+    path: manifests/microservices-sample/environments/prod
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: main
   project: microservices-sample
