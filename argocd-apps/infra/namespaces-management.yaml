@@ -4,7 +4,7 @@ metadata:
   name: namespace-management
 spec:
   destination:
-    namespace: infra
+    namespace: argocd
     server: 'https://kubernetes.default.svc'
   source:
     path: infra/namespaces
