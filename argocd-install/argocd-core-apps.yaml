@@ -12,7 +12,7 @@ spec:
       - values.yaml
     path: argocd-install/argo-cd
     repoURL: https://github.com/andersondario/kubernetes-gitops.git
-    targetRevision: HEAD
+    targetRevision: dev
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
