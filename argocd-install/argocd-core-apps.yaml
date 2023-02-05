@@ -26,10 +26,10 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-projects
+  name: argocd-appprojects
   namespace: argocd
 spec:
-  project: argocd
+  project: infra
   source:
     path: argocd-appprojects
     repoURL: https://github.com/andersondario/kubernetes-gitops.git
