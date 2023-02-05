@@ -9,7 +9,7 @@ spec:
   source:
     path: infra/namespaces
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
-    targetRevision: HEAD
+    targetRevision: dev
   project: infra-management
   syncPolicy:
     automated: 

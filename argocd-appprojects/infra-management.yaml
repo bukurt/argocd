@@ -8,8 +8,6 @@ spec:
   sourceRepos:
   - 'https://github.com/andersondario/kubernetes-gitops.git'
   destinations:
-  - namespace: infra
-    server: https://kubernetes.default.svc
   - namespace: dev
     server: https://kubernetes.default.svc
   - namespace: prod
