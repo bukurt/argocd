@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+spec:
+  destination:
+    name: ''
+    namespace: monitoring
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://grafana.github.io/helm-charts'
+    targetRevision: 6.50.7
+    chart: grafana
+  project: infra
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions: []
