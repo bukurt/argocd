@@ -1,22 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: infra
+  name: argocd
   namespace: argocd
 spec:
-  description: Infra Project
+  description: Core Argocd
   sourceRepos:
   - '*'
   destinations:
   - namespace: argocd
-    server: https://kubernetes.default.svc
-  - namespace: kong-istio
-    server: https://kubernetes.default.svc
-  - namespace: monitoring
-    server: https://kubernetes.default.svc
-  - namespace: dev
-    server: https://kubernetes.default.svc
-  - namespace: prod
     server: https://kubernetes.default.svc
   clusterResourceWhitelist:
   - group: '*'

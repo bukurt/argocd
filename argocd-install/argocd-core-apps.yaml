@@ -4,7 +4,7 @@ metadata:
   name: argocd
   namespace: argocd
 spec:
-  project: infra
+  project: argocd
   source:
     helm:
       version: v3
@@ -29,7 +29,7 @@ metadata:
   name: argocd-appprojects
   namespace: argocd
 spec:
-  project: infra
+  project: argocd
   source:
     path: argocd-appprojects
     repoURL: https://github.com/andersondario/kubernetes-gitops.git
@@ -51,7 +51,7 @@ metadata:
   name: argocd-apps
   namespace: argocd
 spec:
-  project: infra
+  project: argocd
   source:
     path: argocd-apps
     repoURL: https://github.com/andersondario/kubernetes-gitops.git
