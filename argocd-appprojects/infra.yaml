@@ -8,6 +8,8 @@ spec:
   sourceRepos:
   - '*'
   destinations:
+  - namespace: argocd
+    server: https://kubernetes.default.svc
   - namespace: kong-istio
     server: https://kubernetes.default.svc
   - namespace: monitoring
