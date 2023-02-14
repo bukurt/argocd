@@ -1,4 +1,4 @@
 resources:
-- ./environments/dev
-- ./environments/prod
-- ./environments/monitoring
+- ./namespaces/dev
+- ./namespaces/prod
+- ./namespaces/monitoring
