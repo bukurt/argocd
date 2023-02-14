@@ -9,7 +9,7 @@ spec:
   source:
     path: manifests/microservices-sample/environments/dev
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
-    targetRevision: dev``
+    targetRevision: dev
   project: microservices-sample
   syncPolicy:
     automated: 
