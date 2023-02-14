@@ -1,3 +1,4 @@
 resources:
 - ./environments/dev
 - ./environments/prod
+- ./environments/monitoring
