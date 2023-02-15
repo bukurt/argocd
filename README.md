@@ -24,4 +24,7 @@ cd argocd-install
 
 # If you are running locally, enable the tunnel.
 # minikube tunnel
+
+# And to enable the metric-server
+# minikube addon enable metrics-server
 ```

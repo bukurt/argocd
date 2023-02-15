@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: grafana
+  name: grafana-stack
 spec:
   destination:
     name: ''
@@ -10,8 +10,12 @@ spec:
   source:
     path: ''
     repoURL: 'https://grafana.github.io/helm-charts'
-    targetRevision: 6.50.7
-    chart: grafana
+    targetRevision: 2.9.9
+    chart: loki-stack
+    helm:
+      parameters:
+        - name: grafana.enabled
+          value: 'true'
   project: infra
   syncPolicy:
     automated:
