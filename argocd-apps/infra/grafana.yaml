@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: loki
+  name: grafana
 spec:
   destination:
     namespace: argocd
@@ -9,7 +9,7 @@ spec:
   source:
     helm:
       version: v3
-    path: infra/monitoring/loki
+    path: infra/monitoring/grafana
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
   project: infra
