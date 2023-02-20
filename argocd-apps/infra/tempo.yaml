@@ -9,7 +9,7 @@ spec:
   source:
     helm:
       version: v3
-    path: infra/monitoring/tempo
+    path: infra/monitoring/tempo-distributed
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
   project: infra

@@ -12,6 +12,8 @@ spec:
     server: https://kubernetes.default.svc
   - namespace: kong-istio
     server: https://kubernetes.default.svc
+  - namespace: istio-system
+    server: https://kubernetes.default.svc
   - namespace: monitoring
     server: https://kubernetes.default.svc
   - namespace: dev
