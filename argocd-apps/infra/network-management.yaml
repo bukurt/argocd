@@ -7,6 +7,8 @@ spec:
     namespace: istio-system
     server: 'https://kubernetes.default.svc'
   source:
+    helm:
+      version: v3
     path: infra/network
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
