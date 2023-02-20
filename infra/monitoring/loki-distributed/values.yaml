@@ -845,7 +845,7 @@ ingress:
       - /prometheus/api/v1/rules
       - /prometheus/api/v1/alerts
   hosts:
-    - loki.local
+    - loki.example
   # tls:
   #   - secretName: loki-distributed-tls
   #     hosts:

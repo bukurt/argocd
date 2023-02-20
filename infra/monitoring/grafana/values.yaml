@@ -224,7 +224,7 @@ ingress:
   pathType: Prefix
 
   hosts:
-    - grafana.local
+    - grafana.example
   ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
   extraPaths: []
   # - path: /*

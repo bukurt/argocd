@@ -1392,7 +1392,7 @@ gateway:
     annotations: {}
     # -- Hosts configuration for the gateway ingress
     hosts:
-      - host: gateway.tempo.local
+      - host: gateway.tempo.example
         paths:
           - path: /
             # -- pathType (e.g. ImplementationSpecific, Prefix, .. etc.) might also be required by some Ingress Controllers
