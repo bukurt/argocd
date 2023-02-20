@@ -4,12 +4,14 @@ metadata:
   name: network-management
 spec:
   destination:
-    namespace: argocd
+    namespace: istio-system
     server: 'https://kubernetes.default.svc'
   source:
     path: infra/network
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
+    directory:
+      recurse: true
   project: infra
   syncPolicy:
     automated: 
