@@ -9,8 +9,6 @@ spec:
   source:
     helm:
       version: v3
-      valueFiles:
-      - values.yaml
     path: infra/monitoring
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
