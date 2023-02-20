@@ -4,7 +4,7 @@ metadata:
   name: grafana
 spec:
   destination:
-    namespace: argocd
+    namespace: monitoring
     server: 'https://kubernetes.default.svc'
   source:
     helm:
