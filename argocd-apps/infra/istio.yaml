@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio
+  name: istio-base
 spec:
   destination:
     namespace: istio-system
@@ -10,6 +10,28 @@ spec:
     helm:
       version: v3
     path: infra/network/istio-base
+    repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
+    targetRevision: dev
+  project: infra
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istiod
+spec:
+  destination:
+    namespace: istio-system
+    server: 'https://kubernetes.default.svc'
+  source:
+    helm:
+      version: v3
+    path: infra/network/istiod
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
   project: infra
