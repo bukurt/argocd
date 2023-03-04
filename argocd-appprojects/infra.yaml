@@ -10,7 +10,7 @@ spec:
   destinations:
   - namespace: argocd
     server: https://kubernetes.default.svc
-  - namespace: kong-istio
+  - namespace: kong
     server: https://kubernetes.default.svc
   - namespace: istio-system
     server: https://kubernetes.default.svc

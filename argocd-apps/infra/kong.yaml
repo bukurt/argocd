@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kong-istio
+  name: kong
 spec:
   destination:
-    namespace: kong-istio
+    namespace: kong
     server: 'https://kubernetes.default.svc'
   source:
     helm:

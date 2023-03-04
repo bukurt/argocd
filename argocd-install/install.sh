@@ -1,16 +1,11 @@
 #!/bin/bash
-namespaces=("kong-istio" "argocd" "monitoring" "istio-system")
-
-helm repo add kong https://charts.konghq.com
-helm repo add argocd https://argoproj.github.io/argo-helm
-helm repo update
+namespaces=("kong" "argocd" "monitoring" "istio-system")
 
 for namespace in "${namespace[@]}"; do  
-    kubectl create $namespace
+    kubectl create argocd
     kubectl label namespace istio-injection=enabled
 done
 
-helm install -n kong-istio kong-istio kong/kong
 helm install -n argocd argocd ./argo-cd
 
 kubectl apply -f argocd-core-projects.yaml

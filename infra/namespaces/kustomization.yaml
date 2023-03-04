@@ -1,4 +1,0 @@
-resources:
-- ./namespaces/dev
-- ./namespaces/prod
-- ./namespaces/monitoring
