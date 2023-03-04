@@ -1,8 +1,12 @@
-{{ $mcsAPIGroup := or .Values.pilot.env.MCS_API_GROUP "multicluster.x-k8s.io" }}
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# DO NOT EDIT!
+# THIS IS A LEGACY CHART HERE FOR BACKCOMPAT
+# UPDATED CHART AT manifests/charts/istio-control/istio-discovery
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: istiod-clusterrole{{- if not (eq .Values.revision "")}}-{{ .Values.revision }}{{- end }}-{{ .Release.Namespace }}
+  name: istiod-{{ .Values.global.istioNamespace }}
   labels:
     app: istiod
     release: {{ .Release.Name }}
@@ -20,11 +24,11 @@ rules:
   # istio configuration
   # removing CRD permissions can break older versions of Istio running alongside this control plane (https://github.com/istio/istio/issues/29382)
   # please proceed with caution
-  - apiGroups: ["config.istio.io", "security.istio.io", "networking.istio.io", "authentication.istio.io", "rbac.istio.io", "telemetry.istio.io", "extensions.istio.io"]
+  - apiGroups: ["config.istio.io", "security.istio.io", "networking.istio.io", "authentication.istio.io", "rbac.istio.io", "telemetry.istio.io"]
     verbs: ["get", "watch", "list"]
     resources: ["*"]
 {{- if .Values.global.istiod.enableAnalysis }}
-  - apiGroups: ["config.istio.io", "security.istio.io", "networking.istio.io", "authentication.istio.io", "rbac.istio.io", "telemetry.istio.io", "extensions.istio.io"]
+  - apiGroups: ["config.istio.io", "security.istio.io", "networking.istio.io", "authentication.istio.io", "rbac.istio.io", "telemetry.istio.io"]
     verbs: ["update"]
     # TODO: should be on just */status but wildcard is not supported
     resources: ["*"]
@@ -82,9 +86,6 @@ rules:
       - "signers"
     resourceNames:
     - "kubernetes.io/legacy-unknown"
-{{- range .Values.global.certSigners }}
-    - {{ . | quote }}
-{{- end }}
     verbs: ["approve"]
 
   # Used by Istiod to verify the JWT tokens
@@ -103,7 +104,7 @@ rules:
     verbs: ["get", "watch", "list"]
   - apiGroups: ["networking.x-k8s.io", "gateway.networking.k8s.io"]
     resources: ["*"] # TODO: should be on just */status but wildcard is not supported
-    verbs: ["update", "patch"]
+    verbs: ["update"]
   - apiGroups: ["gateway.networking.k8s.io"]
     resources: ["gatewayclasses"]
     verbs: ["create", "update", "patch", "delete"]
@@ -114,31 +115,67 @@ rules:
     verbs: ["get", "watch", "list"]
 
   # Used for MCS serviceexport management
-  - apiGroups: ["{{ $mcsAPIGroup }}"]
+  - apiGroups: ["multicluster.x-k8s.io"]
     resources: ["serviceexports"]
-    verbs: [ "get", "watch", "list", "create", "delete"]
+    verbs: ["get", "watch", "list", "create", "delete"]
 
   # Used for MCS serviceimport management
-  - apiGroups: ["{{ $mcsAPIGroup }}"]
+  - apiGroups: ["multicluster.x-k8s.io"]
     resources: ["serviceimports"]
     verbs: ["get", "watch", "list"]
 ---
-{{- if not (eq (toString .Values.pilot.env.PILOT_ENABLE_GATEWAY_API_DEPLOYMENT_CONTROLLER) "false") }}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: istiod-gateway-controller{{- if not (eq .Values.revision "")}}-{{ .Values.revision }}{{- end }}-{{ .Release.Namespace }}
+  name: istio-reader-{{ .Values.global.istioNamespace }}
   labels:
-    app: istiod
+    app: istio-reader
     release: {{ .Release.Name }}
 rules:
+  - apiGroups:
+      - "config.istio.io"
+      - "security.istio.io"
+      - "networking.istio.io"
+      - "authentication.istio.io"
+      - "rbac.istio.io"
+    resources: ["*"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["endpoints", "pods", "services", "nodes", "replicationcontrollers", "namespaces", "secrets"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["networking.istio.io"]
+    verbs: [ "get", "watch", "list" ]
+    resources: [ "workloadentries" ]
+  - apiGroups: ["apiextensions.k8s.io"]
+    resources: ["customresourcedefinitions"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["discovery.k8s.io"]
+    resources: ["endpointslices"]
+    verbs: ["get", "list", "watch"]
   - apiGroups: ["apps"]
-    verbs: [ "get", "watch", "list", "update", "patch", "create", "delete" ]
-    resources: [ "deployments" ]
+    resources: ["replicasets"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["authentication.k8s.io"]
+    resources: ["tokenreviews"]
+    verbs: ["create"]
+  - apiGroups: ["authorization.k8s.io"]
+    resources: ["subjectaccessreviews"]
+    verbs: ["create"]
+  - apiGroups: ["multicluster.x-k8s.io"]
+    resources: ["serviceexports"]
+    verbs: ["get", "watch", "list"]
+  - apiGroups: ["multicluster.x-k8s.io"]
+    resources: ["serviceimports"]
+    verbs: ["get", "watch", "list"]
+{{- if or .Values.global.externalIstiod }}
   - apiGroups: [""]
-    verbs: [ "get", "watch", "list", "update", "patch", "create", "delete" ]
-    resources: [ "services" ]
-  - apiGroups: [""]
-    verbs: [ "get", "watch", "list", "update", "patch", "create", "delete" ]
-    resources: [ "serviceaccounts"]
-{{- end }}
+    resources: ["configmaps"]
+    verbs: ["create", "get", "list", "watch", "update"]
+  - apiGroups: ["admissionregistration.k8s.io"]
+    resources: ["mutatingwebhookconfigurations"]
+    verbs: ["get", "list", "watch", "update", "patch"]
+  - apiGroups: ["admissionregistration.k8s.io"]
+    resources: ["validatingwebhookconfigurations"]
+    verbs: ["get", "list", "watch", "update"]
+{{- end}}
+---

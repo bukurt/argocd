@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istiod
+  name: istio
 spec:
   destination:
     namespace: istio-system
@@ -9,7 +9,7 @@ spec:
   source:
     helm:
       version: v3
-    path: infra/network/istiod
+    path: infra/network/istio-base
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
   project: infra
