@@ -1,10 +1,6 @@
 #!/bin/bash
-namespaces=("kong" "argocd" "monitoring" "istio-system")
-
-for namespace in "${namespace[@]}"; do  
-    kubectl create argocd
-    kubectl label namespace istio-injection=enabled
-done
+kubectl create argocd
+kubectl label namespace default istio-injection=enabled
 
 helm install -n argocd argocd ./argo-cd
 
