@@ -9,6 +9,9 @@ spec:
   source:
     helm:
       version: v3
+      valueFiles: 
+        - values.yaml
+        - values.datasources.yaml 
     path: infra/monitoring/grafana
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
