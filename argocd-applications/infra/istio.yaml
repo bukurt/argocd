@@ -34,7 +34,7 @@ spec:
     path: infra/network/istiod
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
-  project: Infrastructure
+  project: infrastructure
   syncPolicy:
     automated: 
       prune: true

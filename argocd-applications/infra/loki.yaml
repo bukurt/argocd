@@ -12,7 +12,7 @@
 #     path: infra/monitoring/loki-distributed
 #     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
 #     targetRevision: dev
-#   project: infra
+#   project: infrastructure
 #   syncPolicy:
 #     automated: 
 #       prune: true

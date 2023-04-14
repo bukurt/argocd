@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: Infrastructure
+  name: infrastructure
   namespace: argocd
 spec:
   description: Project containing all Infrastructure resources
