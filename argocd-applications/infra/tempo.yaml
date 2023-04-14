@@ -9,7 +9,7 @@
 #   source:
 #     helm:
 #       version: v3
-#     path: infra/monitoring/tempo-distributed
+#     path: manifests/infra/monitoring/tempo-distributed
 #     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
 #     targetRevision: dev
 #   project: infrastructure

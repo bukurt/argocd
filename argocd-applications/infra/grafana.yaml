@@ -9,7 +9,7 @@ spec:
   source:
     helm:
       version: v3
-    path: infra/monitoring/grafana
+    path: manifests/infra/monitoring/grafana
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
   project: infrastructure

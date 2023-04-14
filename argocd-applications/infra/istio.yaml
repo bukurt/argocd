@@ -9,7 +9,7 @@ spec:
   source:
     helm:
       version: v3
-    path: infra/network/istio-base
+    path: manifests/infra/network/istio-base
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
   project: infrastructure
@@ -31,7 +31,7 @@ spec:
   source:
     helm:
       version: v3
-    path: infra/network/istiod
+    path: manifests/infra/network/istiod
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
   project: infrastructure
