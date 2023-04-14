@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prometheus
+  name: kong
 spec:
   destination:
-    namespace: monitoring
+    namespace: kong
     server: 'https://kubernetes.default.svc'
   source:
     helm:
       version: v3
-    path: infra/monitoring/prometheus
+    path: infra/network/kong
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
-  project: infra
+  project: Infrastructure
   syncPolicy:
     automated: 
       prune: true

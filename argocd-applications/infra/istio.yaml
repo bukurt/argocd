@@ -12,7 +12,7 @@ spec:
     path: infra/network/istio-base
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
-  project: infra
+  project: Infrastructure
   syncPolicy:
     automated: 
       prune: true
@@ -34,7 +34,7 @@ spec:
     path: infra/network/istiod
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
-  project: infra
+  project: Infrastructure
   syncPolicy:
     automated: 
       prune: true

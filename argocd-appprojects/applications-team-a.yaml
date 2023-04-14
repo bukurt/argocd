@@ -1,9 +1,7 @@
 # apiVersion: argoproj.io/v1alpha1
 # kind: AppProject
 # metadata:
-#   annotations:
-#   labels:
-#   name: microservices-sample
+#   name: Apps-Team-A
 #   namespace: argocd
 # spec:
 #   description: Microservices-sample Project

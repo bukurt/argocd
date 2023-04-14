@@ -5,7 +5,7 @@ kubectl label namespace default istio-injection=enabled
 helm install -n argocd argocd ./argo-cd
 
 kubectl apply -f argocd-core-projects.yaml
-kubectl apply -f argocd-core-apps.yaml
+kubectl apply -f argocd-core-applications.yaml
 
 sleep 90
 

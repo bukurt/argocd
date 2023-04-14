@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: tempo
+  name: prometheus
 spec:
   destination:
     namespace: monitoring
@@ -9,10 +9,10 @@ spec:
   source:
     helm:
       version: v3
-    path: infra/monitoring/tempo-distributed
+    path: infra/monitoring/prometheus
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
-  project: infra
+  project: Infrastructure
   syncPolicy:
     automated: 
       prune: true

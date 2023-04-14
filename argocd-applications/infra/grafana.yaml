@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kong
+  name: grafana
 spec:
   destination:
-    namespace: kong
+    namespace: monitoring
     server: 'https://kubernetes.default.svc'
   source:
     helm:
       version: v3
-    path: infra/network/kong
+    path: infra/monitoring/grafana
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
     targetRevision: dev
-  project: infra
+  project: Infrastructure
   syncPolicy:
     automated: 
       prune: true
