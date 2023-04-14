@@ -17,14 +17,13 @@ This project aims to install a self-managed Argo CD using the App of App pattern
 cd argocd-install
 
 # If you are running locally, create a cluster before with minikube.
-# minikube start --memory 8192 --cpus 2
-# minikube addons enable metrics-server
+minikube start --memory 8192 --cpus 2
+minikube addons enable metrics-server
 
 ./install.sh
 
 # If you are running locally, enable the tunnel.
-# minikube tunnel
+minikube tunnel
 
 # And to enable the metric-server
-# minikube addon enable metrics-server
 ```
