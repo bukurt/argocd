@@ -11,7 +11,7 @@
 #       version: v3
 #     path: manifests/infra/monitoring/tempo-distributed
 #     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
-#     targetRevision: dev
+#     targetRevision: HEAD
 #   project: infrastructure
 #   syncPolicy:
 #     automated: 

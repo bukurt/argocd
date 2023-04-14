@@ -11,7 +11,7 @@ spec:
       version: v3
     path: manifests/infra/monitoring/prometheus
     repoURL: 'https://github.com/andersondario/kubernetes-gitops.git'
-    targetRevision: dev
+    targetRevision: HEAD
   project: infrastructure
   syncPolicy:
     automated: 
